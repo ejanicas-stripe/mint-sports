@@ -154,6 +154,17 @@ export default function ShoppingCart(props) {
                 Checkout
               </button>
             </div>
+
+            <div className="mt-6">
+              <a href="">
+                <button
+                  type="button"
+                  className="w-full bg-indigo-100 text-indigo-700 border border-transparent rounded-md shadow-sm py-3 px-4 text-base font-medium text-white hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500"
+                >
+                  Return to shopping
+                </button>
+              </a>
+            </div>
           </section>
         </form>
       </main>
