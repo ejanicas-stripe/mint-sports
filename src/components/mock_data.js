@@ -1,7 +1,7 @@
-const baseball_glove = require('./img/baseball_glove.jpg');
-const baseball = require('./img/baseball.jpg');
-const card = require('./img/card.jpg');
-const vettel = require('./img/vettel.jpg');
+const baseball_glove = require('../img/baseball_glove.jpg');
+const baseball = require('../img/baseball.jpg');
+const card = require('../img/card.jpg');
+const vettel = require('../img/vettel.jpg');
 
 export const products = [
     {

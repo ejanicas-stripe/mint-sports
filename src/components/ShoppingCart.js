@@ -3,9 +3,8 @@ import {
   CheckIcon,
   ClockIcon,
   QuestionMarkCircleIcon,
-  XIcon as XIconSolid,
 } from "@heroicons/react/solid";
-import { products } from "../products.js";
+import { products } from "./mock_data.js";
 
 export default function ShoppingCart(props) {
   const [subtotal, setSubtotal] = useState(0);
@@ -17,7 +16,7 @@ export default function ShoppingCart(props) {
         0
       )
     );
-  });
+  }, [props.shoppingCart]);
 
   return (
     <div className="bg-white">
@@ -37,10 +36,7 @@ export default function ShoppingCart(props) {
               Items in your shopping cart
             </h2>
 
-            <ul
-              role="list"
-              className="border-t border-b border-gray-200 divide-y divide-gray-200"
-            >
+            <ul className="border-t border-b border-gray-200 divide-y divide-gray-200">
               {props.shoppingCart.map((product, productIdx) => (
                 <li key={product.id} className="flex py-6 sm:py-10">
                   <div className="flex-shrink-0">

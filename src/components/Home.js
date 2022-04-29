@@ -4,7 +4,7 @@ import { XIcon } from "@heroicons/react/outline";
 import Header from "./Header.js";
 import Footer from "./Footer.js";
 import ShoppingCart from "./ShoppingCart";
-import { products } from "../products.js";
+import { products } from "./mock_data.js";
 const all_cards = require("../img/all_cards.jpg");
 
 export default function Home(props) {
@@ -13,7 +13,7 @@ export default function Home(props) {
   const [checkout, setCheckout] = useState(false);
 
   function addToCart(e, product) {
-    setCheckout(true)
+    setCheckout(true);
     setShoppingCart([...shoppingCart, product]);
   }
   return (
@@ -134,10 +134,7 @@ export default function Home(props) {
 
               <div className="mt-8 relative">
                 <div className="relative w-full overflow-x-auto">
-                  <ul
-                    role="list"
-                    className="mx-4 inline-flex space-x-8 sm:mx-6 lg:mx-0 lg:space-x-0 lg:grid lg:grid-cols-4 lg:gap-x-8"
-                  >
+                  <ul className="mx-4 inline-flex space-x-8 sm:mx-6 lg:mx-0 lg:space-x-0 lg:grid lg:grid-cols-4 lg:gap-x-8">
                     {products.map((product) => (
                       <li
                         key={product.id}

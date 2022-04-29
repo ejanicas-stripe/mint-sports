@@ -1,4 +1,6 @@
 import { SearchIcon, ShoppingBagIcon } from "@heroicons/react/outline";
+const logo = require('../img/logo.png');
+
 
 export default function Header(props) {
   function goToCheckout() {
@@ -17,8 +19,8 @@ export default function Header(props) {
               <a href="#">
                 <span className="sr-only">Workflow</span>
                 <img
-                  className="h-8 w-auto"
-                  src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=600"
+                  className="h-14 w-auto"
+                  src={logo}
                   alt=""
                   onClick={() => leaveCheckout()}
                 />
