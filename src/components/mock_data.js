@@ -3,6 +3,7 @@ const baseball = require('../img/baseball.jpg');
 const card = require('../img/card.jpg');
 const vettel = require('../img/vettel.jpg');
 
+
 export const products = [
     {
       id: 1,

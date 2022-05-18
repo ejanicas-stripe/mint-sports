@@ -93,7 +93,9 @@ export default function Home(props) {
         )}
 
         {/* Cart */}
-        {checkout && <ShoppingCart shoppingCart={shoppingCart} />}
+        {checkout && (
+          <ShoppingCart shoppingCart={shoppingCart} setCheckout={setCheckout} />
+        )}
       </main>
 
       <Footer />

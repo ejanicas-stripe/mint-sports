@@ -6,6 +6,7 @@ import {
 } from "@heroicons/react/solid";
 import { products } from "./mock_data.js";
 
+const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 export default function ShoppingCart(props) {
   const [subtotal, setSubtotal] = useState(0);
 
@@ -26,7 +27,7 @@ export default function ShoppingCart(props) {
         </h1>
 
         <form
-          action={products[0].href}
+          action={SERVER_URL + products[0].href}
           method="POST"
           className="mt-12 lg:grid lg:grid-cols-12 lg:gap-x-12 lg:items-start xl:gap-x-16"
         >
@@ -156,9 +157,10 @@ export default function ShoppingCart(props) {
             </div>
 
             <div className="mt-6">
-              <a href="">
+              <a href="#">
                 <button
                   type="button"
+                  onClick={(e) => props.setCheckout(false)}
                   className="w-full bg-indigo-100 text-indigo-700 border border-transparent rounded-md shadow-sm py-3 px-4 text-base font-medium text-white hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500"
                 >
                   Return to shopping
