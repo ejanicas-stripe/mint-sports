@@ -1,0 +1,67 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  create-checkout-session
+
+  Sample SAM Template for create-checkout-session
+
+Metadata:
+  AWS::ServerlessRepo::Application:
+    Name: create-checkout-session
+    Description: Sample Stripe Create Checkout Session
+    Author: Eduardo Janicas
+    SpdxLicenseId: Apache-2.0
+    LicenseUrl: LICENSE.md
+    ReadmeUrl: README.md
+    Labels: ['stripe', 'checkout']
+    HomePageUrl: https://stripe.com/docs/checkout/quickstart
+    SemanticVersion: 0.0.1
+    SourceCodeUrl: https://github.com/ejanicas-stripe/mint-sports/create-checkout-session
+
+Parameters:
+  YourDomainParameter:
+    Type: String
+    Description: Enter your website domain for redirects.
+  StripeAPIKeyParameter:
+    Type: String
+    Description: Enter your Stripe Secret Key
+
+Resources:
+  CreateCheckoutSessionEndpointFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: create-checkout-session/
+      Handler: app.lambda_handler
+      Runtime: python3.9
+      Architectures:
+        - x86_64
+      Timeout: 5
+      Policies:
+        - CloudWatchPutMetricPolicy: {}
+        
+      Environment:
+        Variables:
+          YOUR_DOMAIN: 
+            Ref: YourDomainParameter
+          STRIPE_API_KEY:
+            Ref: StripeAPIKeyParameter
+      Events:
+        CreateCheckoutSessionEndpoint:
+          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Path: /create-checkout-session
+            Method: post
+
+Outputs:
+  # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
+  # Find out more about other implicit resources you can reference within SAM
+  # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
+  CreateCheckoutSessionEndpointApi:
+    Description: "API Gateway endpoint URL for Prod stage for CreateCheckoutSession Endpoint function"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/create-checkout-session/"
+  CreateCheckoutSessionEndpointFunction:
+    Description: "CreateCheckoutSession Endpoint Lambda Function ARN"
+    Value: !GetAtt CreateCheckoutSessionEndpointFunction.Arn
+  CreateCheckoutSessionEndpointFunctionIamRole:
+    Description: "Implicit IAM Role created for CreateCheckoutSession Endpoint function"
+    Value: !GetAtt CreateCheckoutSessionEndpointFunctionRole.Arn

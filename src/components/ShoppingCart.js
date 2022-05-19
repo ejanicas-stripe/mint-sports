@@ -31,7 +31,6 @@ export default function ShoppingCart(props) {
           method="POST"
           className="mt-12 lg:grid lg:grid-cols-12 lg:gap-x-12 lg:items-start xl:gap-x-16"
         >
-          <input type="hidden" name="priceId" value={products[0].priceId} />
           <section aria-labelledby="cart-heading" className="lg:col-span-7">
             <h2 id="cart-heading" className="sr-only">
               Items in your shopping cart
@@ -95,6 +94,7 @@ export default function ShoppingCart(props) {
                       </span>
                     </p>
                   </div>
+                  <input type="hidden" name="priceId" value={product.priceId} />
                 </li>
               ))}
             </ul>
