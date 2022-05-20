@@ -17,7 +17,9 @@ In the project directory, you can run:
 ```
 ### Spin up the backend
 
-2. On the `/backend` folder, deploy the sample application:
+2. [Install the AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
+
+3. On the `/backend` folder, deploy the sample application:
 ```bash
 cd backend
 sam build
@@ -25,7 +27,7 @@ sam deploy --guided
 cd ..
 ```
 
-3. The first command will build the source of your application. The second command will package and deploy your application to AWS, with a series of prompts you need to fill:
+4. The first command will build the source of your application. The second command will package and deploy your application to AWS, with a series of prompts you need to fill:
 
 * **Stack Name**: The name of the stack to deploy to CloudFormation. This should be unique to your account and region, and a good starting point would be something matching your project name.
 * **AWS Region**: The AWS region you want to deploy your app to.
@@ -37,7 +39,7 @@ You can find your API Gateway Endpoint URL in the output values displayed after 
 
 ### Launch the frontend
 
-4. **Set up Environment Variables**
+5. **Set up Environment Variables**
 
 Your project consumes variables declared in your environment as if they were declared locally in your JS files. By default you will have `NODE_ENV` defined for you, and any other environment variables starting with `REACT_APP_`.
 
@@ -56,7 +58,7 @@ Replace the placeholder variable in the .env file with your API Gateway Endpoint
 REACT_APP_SERVER_URL=<replace-with-your-server-url>
 ```
 
-5. On the `/frontend` folder, run `npm install`
+6. On the `/frontend` folder, run `npm install`
 ```bash
 cd frontend
 npm install
@@ -64,7 +66,7 @@ npm install
 
 Installs the dependencies in the local `node_modules` folder
 
-6. Finally, run `npm start`
+7. Finally, run `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
