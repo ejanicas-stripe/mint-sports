@@ -14,7 +14,7 @@ export const products = [
       href: '/create-checkout-session/',
       imageSrc: baseball_glove,
       imageAlt: 'Baseball Glove',
-      priceId: 'price_1KtWwmDVw81LB5d84zzvBYLp',
+      priceId: 'price_1L1CIyDVw81LB5d8Ul1KeNN9',
       leadTime: '3-5 days'
     },
     {
@@ -26,7 +26,7 @@ export const products = [
       href: '/create-checkout-session/',
       imageSrc: baseball,
       imageAlt: 'Baseball',
-      priceId: 'price_1KtWreDVw81LB5d8Gn3Q8HFn',
+      priceId: 'price_1L1CJ0DVw81LB5d8f02NunEA',
       leadTime: '3-5 days'
     },
     {
@@ -38,7 +38,7 @@ export const products = [
       href: '/create-checkout-session/',
       imageSrc: card,
       imageAlt: 'Baseball Card',
-      priceId: 'price_1KtWtyDVw81LB5d8y8mjEZvh',
+      priceId: 'price_1L1CJ2DVw81LB5d8nSOQsT39',
       leadTime: '3-5 days'
     },
     {
@@ -50,7 +50,7 @@ export const products = [
       href: '/create-checkout-session/',
       imageSrc: vettel,
       imageAlt: 'F1 Miniature Helmet',
-      priceId: 'price_1KtWuODVw81LB5d8QfAhVzff',
+      priceId: '{HELMET_PRICE}',
       leadTime: '3-5 days'
     },
   ]
